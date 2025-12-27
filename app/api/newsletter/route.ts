@@ -1,7 +1,5 @@
-
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { supabase } from '@/lib/supabase';
 
 export async function POST(request: Request) {
     try {
@@ -15,44 +13,27 @@ export async function POST(request: Request) {
             );
         }
 
-        const filePath = path.join(process.cwd(), 'newsletter.json');
+        // Insert into Supabase
+        const { error } = await supabase
+            .from('newsletter')
+            .insert([{ email }]);
 
-        let newsletter = [];
-
-        // Check if file exists and read it
-        if (fs.existsSync(filePath)) {
-            const fileContent = fs.readFileSync(filePath, 'utf-8');
-            try {
-                newsletter = JSON.parse(fileContent);
-            } catch (e) {
-                newsletter = [];
+        if (error) {
+            // Check for unique violation (code 23505 in Postgres)
+            if (error.code === '23505') {
+                return NextResponse.json(
+                    { error: 'You are already subscribed!' },
+                    { status: 409 }
+                );
             }
+            throw error;
         }
-
-        // Check for duplicates
-        if (newsletter.some((entry: any) => entry.email === email)) {
-            return NextResponse.json(
-                { error: 'You are already subscribed!' },
-                { status: 409 }
-            );
-        }
-
-        // Add new entry
-        const newEntry = {
-            email,
-            date: new Date().toISOString()
-        };
-
-        newsletter.push(newEntry);
-
-        // Write back to file
-        fs.writeFileSync(filePath, JSON.stringify(newsletter, null, 2));
 
         return NextResponse.json({ success: true, message: 'Subscribed successfully!' });
     } catch (error) {
         console.error('Error subscribing to newsletter:', error);
         return NextResponse.json(
-            { error: 'Internal server error' },
+            { error: 'Internal server error. Please try again later.' },
             { status: 500 }
         );
     }

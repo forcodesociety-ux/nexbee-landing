@@ -13,7 +13,7 @@ import FAQSection from "./components/FAQSection";
 export default function Home() {
   return (
     <main className="min-h-screen font-sans selection:bg-[var(--brand-yellow)] selection:text-[var(--foreground)]">
-      <Navbar />
+      {/* <Navbar /> */}
       <div id="home"><Hero /></div>
       <div id="about"><AboutStory /></div>
       <div id="rentals"><FeatureRentals /></div>

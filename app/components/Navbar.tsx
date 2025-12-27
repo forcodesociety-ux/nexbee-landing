@@ -70,6 +70,7 @@ export default function Navbar() {
                     <a href="/#rentals" onClick={(e) => scrollToSection(e, 'rentals')} className="hover:text-[var(--foreground)] transition-colors">Rentals</a>
                     <a href="/#resell" onClick={(e) => scrollToSection(e, 'resell')} className="hover:text-[var(--foreground)] transition-colors">Resell</a>
                     <a href="/#requests" onClick={(e) => scrollToSection(e, 'requests')} className="hover:text-[var(--foreground)] transition-colors">Requests</a>
+                    <a href="/#faq" onClick={(e) => scrollToSection(e, 'faq')} className="hover:text-[var(--foreground)] transition-colors">FAQs</a>
                     <a href="/#contact" onClick={(e) => scrollToSection(e, 'contact')} className="hover:text-[var(--foreground)] transition-colors">Contact</a>
                 </div>
 
@@ -120,6 +121,7 @@ export default function Navbar() {
                         <a href="/#rentals" onClick={(e) => scrollToSection(e, 'rentals')} className="hover:text-[var(--brand-green)] transition-colors">Rentals</a>
                         <a href="/#resell" onClick={(e) => scrollToSection(e, 'resell')} className="hover:text-[var(--brand-green)] transition-colors">Resell</a>
                         <a href="/#requests" onClick={(e) => scrollToSection(e, 'requests')} className="hover:text-[var(--brand-green)] transition-colors">Requests</a>
+                        <a href="/#faq" onClick={(e) => scrollToSection(e, 'faq')} className="hover:text-[var(--brand-green)] transition-colors">FAQs</a>
                         <a href="/#contact" onClick={(e) => scrollToSection(e, 'contact')} className="hover:text-[var(--brand-green)] transition-colors">Contact</a>
                     </div>
 
