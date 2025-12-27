@@ -6,7 +6,7 @@ import WaitlistModal from './WaitlistModal';
 export default function Hero() {
     const [showWaitlistModal, setShowWaitlistModal] = useState(false);
     return (
-        <section className="relative min-h-screen flex items-center px-6 pt-20 pb-10 overflow-hidden bg-[var(--background)]">
+        <section className="relative min-h-screen flex items-center px-6 pt-40 md:pt-20 pb-10 overflow-hidden bg-[var(--background)]">
             {/* Abstract Background Shapes */}
             <div className="absolute top-[-20%] left-[-10%] w-[50vh] h-[50vh] rounded-full bg-[var(--brand-green)] opacity-10 blur-[100px]" />
             <div className="absolute bottom-[-10%] right-[-5%] w-[60vh] h-[60vh] rounded-full bg-[var(--brand-yellow)] opacity-10 blur-[120px]" />
@@ -26,19 +26,22 @@ export default function Hero() {
                     <div className="pt-4 flex gap-4">
                         <button
                             onClick={() => setShowWaitlistModal(true)}
-                            className="px-8 py-4 bg-[var(--foreground)] text-[var(--background)] rounded-full font-medium hover:scale-105 transition-transform"
+                            className="px-6 py-3 md:px-8 md:py-4 text-sm md:text-base bg-[var(--foreground)] text-[var(--background)] rounded-full font-medium hover:scale-105 transition-transform"
                         >
                             Join the Waitlist
                         </button>
-                        <button className="px-8 py-4 border border-[var(--foreground)] rounded-full font-medium hover:bg-[var(--foreground)] hover:text-[var(--background)] transition-colors">
+                        <button
+                            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                            className="px-6 py-3 md:px-8 md:py-4 text-sm md:text-base border border-[var(--foreground)] rounded-full font-medium hover:bg-[var(--foreground)] hover:text-[var(--background)] transition-colors"
+                        >
                             Learn More
                         </button>
                     </div>
                 </div>
 
                 {/* Right Column: App Preview */}
-                <div className="flex justify-center md:justify-end">
-                    <div className="w-full max-w-sm aspect-[9/16] bg-gray-100 rounded-[3rem] border-8 border-gray-200 shadow-2xl overflow-hidden relative rotate-[-5deg] hover:rotate-0 transition-transform duration-500">
+                <div className="flex justify-center md:justify-end mt-8 md:mt-0">
+                    <div className="w-[65%] md:w-full max-w-[240px] md:max-w-sm aspect-[9/16] bg-gray-100 rounded-[2rem] md:rounded-[3rem] border-4 md:border-8 border-gray-200 shadow-2xl overflow-hidden relative rotate-[-5deg] hover:rotate-0 transition-transform duration-500 mx-auto md:mx-0">
                         {/* Animation Styles */}
                         <style jsx>{`
                      @keyframes scroll-up {

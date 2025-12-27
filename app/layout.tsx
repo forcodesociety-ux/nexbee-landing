@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Nexbee | Rent, Borrow & Buy",
   description: "The cross-platform mobile app for rentals, reselling, and community sharing.",
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 export default function RootLayout({

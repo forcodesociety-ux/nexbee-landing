@@ -1,6 +1,11 @@
 "use client";
 
+import { useState } from 'react';
+import WaitlistModal from './WaitlistModal';
+
 export default function CallToAction() {
+    const [showWaitlistModal, setShowWaitlistModal] = useState(false);
+
     return (
         <section className="py-32 px-6 bg-[var(--background)] flex items-center justify-center text-center">
             <div className="max-w-3xl mx-auto">
@@ -11,17 +16,16 @@ export default function CallToAction() {
                     Be the first to know when we launch in your neighborhood.
                 </p>
 
-                <form className="max-w-md mx-auto flex gap-2">
-                    <input
-                        type="email"
-                        placeholder="Enter your email"
-                        className="flex-1 px-6 py-4 rounded-full bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 focus:outline-none focus:border-[var(--brand-green)] transition-colors"
-                    />
-                    <button className="px-8 py-4 bg-[var(--foreground)] text-[var(--background)] rounded-full font-bold hover:bg-[var(--brand-green)] transition-colors">
-                        Join
+                <div className="flex justify-center">
+                    <button
+                        onClick={() => setShowWaitlistModal(true)}
+                        className="px-10 py-5 bg-[var(--foreground)] text-[var(--background)] rounded-full text-lg font-bold hover:bg-[var(--brand-green)] hover:scale-105 transition-all shadow-xl"
+                    >
+                        Join Waitlist
                     </button>
-                </form>
+                </div>
             </div>
+            <WaitlistModal isOpen={showWaitlistModal} onClose={() => setShowWaitlistModal(false)} />
         </section>
     );
 }

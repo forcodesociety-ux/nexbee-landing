@@ -8,18 +8,20 @@ import CallToAction from "./components/CallToAction";
 import Navbar from "./components/Navbar";
 
 import Footer from "./components/Footer";
+import FAQSection from "./components/FAQSection";
 
 export default function Home() {
   return (
     <main className="min-h-screen font-sans selection:bg-[var(--brand-yellow)] selection:text-[var(--foreground)]">
       <Navbar />
-      <Hero />
-      <AboutStory />
-      <FeatureRentals />
-      <FeatureResell />
-      <RequestItem />
+      <div id="home"><Hero /></div>
+      <div id="about"><AboutStory /></div>
+      <div id="rentals"><FeatureRentals /></div>
+      <div id="resell"><FeatureResell /></div>
+      <div id="requests"><RequestItem /></div>
       <TrustSection />
-      <CallToAction />
+      <div id="faq"><FAQSection /></div>
+      <div id="contact"><CallToAction /></div>
       <Footer />
     </main>
   );
