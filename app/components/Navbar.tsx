@@ -54,7 +54,7 @@ export default function Navbar() {
                 {/* Logo - Top Left */}
                 <div className="pointer-events-auto">
                     <Link href="/">
-                        <div className="flex items-center gap-0 cursor-pointer hover:scale-105 transition-transform bg-blend-overlay">
+                        {/* <div className="flex items-center gap-0 cursor-pointer hover:scale-105 transition-transform bg-blend-overlay">
                             <Image
                                 src="/logo.png"
                                 alt="Nexbee Logo"
@@ -62,7 +62,11 @@ export default function Navbar() {
                                 height={60}
                                 className="w-16 h-16 object-contain bg-blend-screen"
                             />
-                        </div>
+                        </div> */}
+                        <span className="text-[var(--brand-green)] font-bold  tracking-widest uppercase text-lg ">Nex</span>
+                        <span className="text-[var(--brand-yellow)] font-bold tracking-widest uppercase text-lg">Bee</span>
+
+                        {/* will remove this text after adding logo insha'Allah */}
                     </Link>
                 </div>
 
