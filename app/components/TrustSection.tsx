@@ -32,7 +32,7 @@ export default function TrustSection() {
     ];
 
     return (
-        <section className="py-32 px-6 bg-[var(--background)] border-t border-[var(--foreground)]/5">
+        <section className=" flex flex-col items-center py-32 px-6 bg-[var(--background)] border-t border-[var(--foreground)]/5">
             <div className="max-w-7xl mx-auto">
                 <div className="grid md:grid-cols-3 gap-12 md:gap-24">
                     {values.map((item, idx) => (

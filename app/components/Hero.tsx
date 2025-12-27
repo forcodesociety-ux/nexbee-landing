@@ -1,6 +1,10 @@
 "use client";
 
+import { useState } from 'react';
+import WaitlistModal from './WaitlistModal';
+
 export default function Hero() {
+    const [showWaitlistModal, setShowWaitlistModal] = useState(false);
     return (
         <section className="relative min-h-screen flex items-center px-6 pt-20 pb-10 overflow-hidden bg-[var(--background)]">
             {/* Abstract Background Shapes */}
@@ -20,7 +24,10 @@ export default function Hero() {
                     </p>
 
                     <div className="pt-4 flex gap-4">
-                        <button className="px-8 py-4 bg-[var(--foreground)] text-[var(--background)] rounded-full font-medium hover:scale-105 transition-transform">
+                        <button
+                            onClick={() => setShowWaitlistModal(true)}
+                            className="px-8 py-4 bg-[var(--foreground)] text-[var(--background)] rounded-full font-medium hover:scale-105 transition-transform"
+                        >
                             Join the Waitlist
                         </button>
                         <button className="px-8 py-4 border border-[var(--foreground)] rounded-full font-medium hover:bg-[var(--foreground)] hover:text-[var(--background)] transition-colors">
@@ -83,6 +90,7 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
+            <WaitlistModal isOpen={showWaitlistModal} onClose={() => setShowWaitlistModal(false)} />
         </section>
     );
 }
