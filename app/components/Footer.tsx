@@ -88,6 +88,29 @@ export default function Footer() {
                             </div>
                         ))}
                     </div>
+
+                    <div className="flex flex-row flex-wrap gap-2 mt-8">
+                        <div className="flex items-center gap-2 bg-[var(--background)] text-[var(--foreground)] px-3 py-2 rounded-xl shadow-lg hover:scale-105 transition-transform cursor-default w-fit opacity-90 hover:opacity-100 whitespace-nowrap">
+                            <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.653 17.599c-.71 1.055-1.46 2.109-2.569 2.155-1.07.039-1.416-.64-2.65-.64-1.258 0-1.64.624-2.673.666-1.077.035-1.896-1.096-2.597-2.148-1.428-2.103-2.522-5.952-1.056-8.558 0 .003.73-1.628 2.378-1.652 1.05-.021 1.834.626 2.408.626.574 0 1.637-.775 2.721-.663 3.01.127 4.197 1.944 4.312 2.05-.034.02-2.536 1.343-2.508 4.094.026 3.256 2.857 4.364 2.872 4.372-.023.076-.445 1.554-1.528 3.149M14.73 4.212c.577-.72 1.037-1.706.917-2.693-.9.037-1.996.613-2.652 1.403-.58.69-1.094 1.698-.956 2.651.97.076 1.978-.567 2.692-1.361" />
+                            </svg>
+                            <div className="flex flex-col">
+                                <span className="text-[9px] font-medium leading-none opacity-80">Coming soon to</span>
+                                <span className="text-xs font-bold leading-none">App Store</span>
+                            </div>
+                        </div>
+
+                        <div className="flex items-center gap-2 bg-[var(--background)] text-[var(--foreground)] px-3 py-2 rounded-xl shadow-lg hover:scale-105 transition-transform cursor-default w-fit opacity-90 hover:opacity-100 whitespace-nowrap">
+                            <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3.609 1.814L13.792 12 3.61 22.186a2.657 2.657 0 0 1-1.267-2.132V3.945A2.652 2.652 0 0 1 3.609 1.814zm11.38 11.38l6.305-6.305c.423-.423.518-.94.168-1.332L5.808.903l9.181 9.291zm1.196 -1.196l-3.565 3.565L5.808 23.097l10.377-11.099zm4.61 4.61c.456-.456.456-1.197 0-1.653l-2.028-2.029-2.902 2.902 4.93 4.93z" />
+                                <path d="M3.609 1.814L13.792 12 3.61 22.186a2.657 2.657 0 0 1-1.267-2.132V3.945A2.652 2.652 0 0 1 3.609 1.814zm11.38 11.38l6.305-6.305c.423-.423.518-.94.168-1.332L5.808.903l9.181 9.291zm1.196 -1.196l-3.565 3.565L5.808 23.097l10.377-11.099zm4.61 4.61c.456-.456.456-1.197 0-1.653l-2.028-2.029-2.902 2.902 4.93 4.93z" fillOpacity="0" />
+                            </svg>
+                            <div className="flex flex-col">
+                                <span className="text-[9px] font-medium leading-none opacity-80">Coming soon to</span>
+                                <span className="text-xs font-bold leading-none">Google Play</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div>
@@ -127,8 +150,8 @@ export default function Footer() {
                                 type="submit"
                                 disabled={subscribeStatus === 'loading' || subscribeStatus === 'success'}
                                 className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${subscribeStatus === 'success'
-                                        ? 'bg-[var(--brand-green)] scale-110'
-                                        : 'bg-[var(--brand-green)] hover:bg-[var(--brand-green)]/80'
+                                    ? 'bg-[var(--brand-green)] scale-110'
+                                    : 'bg-[var(--brand-green)] hover:bg-[var(--brand-green)]/80'
                                     } disabled:opacity-80 disabled:cursor-not-allowed`}
                             >
                                 {subscribeStatus === 'loading' ? (

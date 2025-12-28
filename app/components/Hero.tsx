@@ -37,6 +37,8 @@ export default function Hero() {
                             Learn More
                         </button>
                     </div>
+
+
                 </div>
 
                 {/* Right Column: App Preview */}
